@@ -1,0 +1,22 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": [
+        "config:base",
+        ":disableRateLimiting",
+        ":separateMultipleMajorReleases",
+        ":docker",
+        "docker:enableMajor",
+        "docker:pinDigests"
+    ],
+    "packageRules": [
+        {
+            "matchManagers": [
+                "bitbucket-pipelines"
+            ],
+            "matchDepTypes": [
+                "docker"
+            ],
+            "pinDigests": true
+        }
+    ]
+}
